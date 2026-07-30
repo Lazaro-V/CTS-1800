@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Tutor | KidCode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">🤖 KidCode <span class="brand-badge">Ages 5–7</span></a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Lessons</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="parent-zone.html">Parents</a></li>
+          <li><a href="about.html">About & Contact</a></li>
+          <li><a href="booking.html" class="active" aria-current="page">Book a Tutor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page">
+      <h1>Book a Tutor — Demo Calendar</h1>
+      <p>Pick a date and time below to reserve a demo session. This is a prototype — bookings are stored in your browser only (no server).</p>
+
+      <div class="card">
+        <label for="book-date">Choose a date</label>
+        <input id="book-date" type="date">
+
+        <label for="tutor-type" style="margin-top:1rem;">Tutor type</label>
+        <select id="tutor-type">
+          <option value="online">Online (video)</option>
+          <option value="inperson">In-person</option>
+          <option value="hybrid">Hybrid</option>
+        </select>
+
+        <div style="margin-top:1rem;" id="slots-info">Available times for <strong id="slots-for"></strong></div>
+        <div id="calendar-slots" class="calendar-grid" aria-live="polite" style="margin-top:8px"></div>
+
+        <hr style="margin:18px 0">
+        <h3>Quick book (fill your details)</h3>
+        <form id="booking-form" class="contact-form mock-form">
+          <label for="b-name">Your name</label>
+          <input id="b-name" name="name" type="text" required>
+
+          <label for="b-email">Email</label>
+          <input id="b-email" name="email" type="email" required>
+
+          <label for="b-child">Child's name (optional)</label>
+          <input id="b-child" name="child" type="text">
+
+          <input type="hidden" id="b-date" name="date">
+          <input type="hidden" id="b-time" name="time">
+          <input type="hidden" id="b-type" name="type">
+
+          <p style="margin-top:.4rem;color:#6B7280;">Tip: click an available time slot above to fill date/time, then submit here.</p>
+
+          <button type="submit" class="btn-primary" style="margin-top:8px">Book Selected Slot</button>
+        </form>
+
+        <p style="margin-top:12px;color:var(--muted)">View all demo bookings: press <strong>Shift+B</strong> (opens a new tab).</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 KidCode Platform.</p>
+  </footer>
+
+  <script src="js/calendar.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

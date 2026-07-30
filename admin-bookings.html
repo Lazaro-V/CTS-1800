@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — Demo Bookings | KidCode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">🤖 KidCode <span class="brand-badge">Ages 5–7</span></a>
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Lessons</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="admin-bookings.html" class="active" aria-current="page">Admin Bookings</a></li>
+          <li><a href="about.html">About & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page">
+      <h1>Demo Bookings (local)</h1>
+      <p>This admin view reads demo bookings saved in your browser's localStorage (key: <code>kidcode_bookings</code>). Use this to view, confirm, or cancel demo bookings during testing.</p>
+
+      <div class="card" id="admin-area">
+        <div id="bookings-list"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 KidCode Platform.</p>
+  </footer>
+
+  <script>
+    function renderBookings(){
+      var key = 'kidcode_bookings';
+      var arr = JSON.parse(localStorage.getItem(key) || '[]');
+      var el = document.getElementById('bookings-list');
+      if(!el) return;
+      if(arr.length === 0){ el.innerHTML = '<p>No demo bookings found in this browser.</p>'; return; }
+
+      var html = '<table style="width:100%;border-collapse:collapse"><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Child</th><th>Date</th><th>Time</th><th>Type</th><th>Created</th><th>Status</th><th>Actions</th></tr></thead><tbody>';
+      arr.forEach(function(b, i){
+        html += '<tr style="border-bottom:1px solid #E6EEF8">';
+        html += '<td style="padding:8px">' + escapeHtml(b.id) + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.name) + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.email) + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.child || '') + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.date) + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.time) + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.type) + '</td>';
+        html += '<td style="padding:8px">' + new Date(b.createdAt).toLocaleString() + '</td>';
+        html += '<td style="padding:8px">' + escapeHtml(b.status || 'requested') + '</td>';
+        html += '<td style="padding:8px">';
+        html += '<button data-action="confirm" data-index="' + i + '" class="btn-primary" style="margin-right:6px">Confirm</button>';
+        html += '<button data-action="cancel" data-index="' + i + '" class="btn-secondary">Cancel</button>';
+        html += '<button data-action="delete" data-index="' + i + '" style="margin-left:6px">Delete</button>';
+        html += '</td>';
+        html += '</tr>';
+      });
+      html += '</tbody></table>';
+      el.innerHTML = html;
+
+      el.querySelectorAll('button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var action = this.getAttribute('data-action');
+          var idx = parseInt(this.getAttribute('data-index'), 10);
+          if(action === 'confirm') arr[idx].status = 'confirmed';
+          if(action === 'cancel') arr[idx].status = 'cancelled';
+          if(action === 'delete') arr.splice(idx,1);
+          localStorage.setItem(key, JSON.stringify(arr));
+          renderBookings();
+        });
+      });
+    }
+
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    document.addEventListener('DOMContentLoaded', renderBookings);
+  </script>
+</body>
+</html>
