@@ -25,7 +25,8 @@ nav a.active{color:var(--brand);font-weight:700}
 .hero-card{max-width:var(--max-width);margin:28px auto;padding:20px;background:linear-gradient(180deg, #fff, #fbfdff);border-radius:var(--radius);display:flex;gap:18px;align-items:center}
 .hero-media img{width:360px;height:auto;border-radius:8px}
 .hero-copy{flex:1}
-.btn-primary{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+.btn-primary{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;border:none;cursor:pointer}
+.btn-secondary{background:#6b7280}
 .divider{height:1px;background:linear-gradient(90deg,transparent,#e6e9ef,transparent);max-width:var(--max-width);margin:28px auto;border-radius:1px}
 .section-title{max-width:var(--max-width);margin:12px auto 8px;padding:0 18px}
 .card-grid{max-width:var(--max-width);margin:0 auto;padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
@@ -35,8 +36,15 @@ nav a.active{color:var(--brand);font-weight:700}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
 .gallery-grid img{width:100%;height:200px;object-fit:cover;border-radius:8px}
 .contact-form{display:grid;gap:10px;max-width:600px}
-input,textarea{padding:10px;border-radius:6px;border:1px solid #d1d5db}
+input,textarea,select{padding:10px;border-radius:6px;border:1px solid #d1d5db}
 footer{max-width:var(--max-width);margin:30px auto;padding:18px;text-align:center;color:var(--muted)}
+
+/* Mock confirmation overlay styles */
+.mock-overlay{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:1200}
+.mock-panel{background:#fff;border-radius:12px;padding:20px;max-width:720px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.3)}
+.mock-panel h2{margin-top:0}
+.mock-pre{white-space:pre-wrap;word-wrap:break-word;background:#f8fafc;padding:10px;border-radius:6px;border:1px solid #e6eef8}
+
 @media (max-width:720px){
   .hero-card{flex-direction:column;text-align:center}
   .hero-media img{width:100%;max-width:420px}
