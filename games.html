@@ -15,10 +15,10 @@
       <nav aria-label="Main Navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Lessons</a></li>
+          <li><a href="learn.html">Lessons</a></li>
           <li><a href="games.html" class="active" aria-current="page">Games</a></li>
           <li><a href="parent-zone.html">Parents</a></li>
-          <li><a href="about.html">About & Contact</a></li>
+          <li><a href="contact.html">Join Us</a></li>
         </ul>
       </nav>
     </div>
@@ -27,37 +27,48 @@
   <main id="main-content">
     <section class="hero-card" style="background: #EEF2FF;">
       <h1>Logic & Maze Challenges 🎮</h1>
-      <p>Solve interactive puzzles by applying sequence, loop, and pathing commands.</p>
+      <p>Solve interactive puzzles by applying sequence, loop, and pathing commands. No pressure — play, learn, and have fun.</p>
     </section>
 
     <div class="card-grid">
-      <article class="card">
+      <article class="card game-card" data-game="puppy">
         <div class="card-icon">🐶</div>
         <h3>Puppy Maze Quest</h3>
-        <p>Guide Barnaby through obstacles using direct command blocks.</p>
-        <a href="services.html" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.95rem; margin-top: 1rem; display:inline-block">Play Level 🐾</a>
+        <p>Guide Barnaby through a maze using command blocks. Build a sequence and press Run.</p>
+        <button class="btn-primary start-game" style="margin-top:1rem">Play 🐾</button>
       </article>
 
-      <article class="card">
+      <article class="card game-card" data-game="rocket">
         <div class="card-icon">🚀</div>
         <h3>Rocket Loop Launch</h3>
-        <p>Use repeat blocks to power up the spaceship thrusters for liftoff.</p>
-        <a href="services.html" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.95rem; margin-top: 1rem; display:inline-block">Play Level 🌌</a>
+        <p>Use repeat blocks and thrusts to launch the rocket. Tweak your loops to reach the skies.</p>
+        <button class="btn-primary start-game" style="margin-top:1rem">Play 🌌</button>
       </article>
 
-      <article class="card">
+      <article class="card game-card" data-game="frog">
         <div class="card-icon">🐸</div>
         <h3>Frog Hop Debugger</h3>
-        <p>Find the bug in the sequence so Freddie can cross the pond safely.</p>
-        <a href="services.html" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.95rem; margin-top: 1rem; display:inline-block">Play Level 🐸</a>
+        <p>Find and fix the bug in a short sequence so Freddie can cross the pond.</p>
+        <button class="btn-primary start-game" style="margin-top:1rem">Play 🐸</button>
       </article>
     </div>
+
+    <section id="game-area" class="interactive-container" style="display:none;">
+      <div id="game-header"></div>
+      <div id="game-ui"></div>
+      <div id="game-controls" style="margin-top:1rem"></div>
+      <div id="game-message" style="margin-top:1rem;color:#0F172A;font-weight:700"></div>
+      <div id="game-leaderboard" style="margin-top:1rem"></div>
+      <button id="exit-game" class="btn-secondary" style="margin-top:12px; display:none;">Exit Game</button>
+    </section>
+
   </main>
 
   <footer>
-    <p>&copy; 2026 KidCode Platform. Designed for early STEM learning. | <a href="about.html">About & Contact</a></p>
+    <p>&copy; 2026 KidCode Platform. Designed for early STEM learning. | <a href="parent-zone.html">Educator Resources</a></p>
   </footer>
 
+  <script src="js/games.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
