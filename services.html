@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact / Join | KidCode</title>
+  <title>Lessons | KidCode</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,9 +15,9 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Lessons</a></li>
+          <li><a href="services.html" class="active" aria-current="page">Lessons</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html" class="active" aria-current="page">Join Us</a></li>
+          <li><a href="contact.html">Join Us</a></li>
         </ul>
       </nav>
     </div>
@@ -25,21 +25,17 @@
 
   <main id="main-content">
     <section class="page">
-      <h1>Join KidCode</h1>
-      <p>Sign up for a free trial or contact us with questions.</p>
+      <h1>Lessons</h1>
+      <p>Our curriculum is broken into short modules that introduce one concept at a time. Each lesson contains 6–10 interactive challenges.</p>
 
-      <form class="contact-form" action="#" method="post">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required>
+      <ul class="lesson-list">
+        <li><strong>Lesson 1:</strong> Sequences &amp; Steps</li>
+        <li><strong>Lesson 2:</strong> Loops &amp; Repeats</li>
+        <li><strong>Lesson 3:</strong> Simple Conditionals</li>
+        <li><strong>Lesson 4:</strong> Functions as Actions</li>
+      </ul>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-
-        <button class="btn-primary" type="submit">Send Message</button>
-      </form>
+      <p><a class="btn-primary" href="contact.html">Sign up for a trial class</a></p>
     </section>
   </main>
 

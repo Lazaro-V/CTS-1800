@@ -12,14 +12,19 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="brand-logo">
-        🤖 KidCode <span class="brand-badge">Ages 5-7</span>
+        <span class="logo-emoji" aria-hidden="true">🤖</span>
+        <span class="brand-text">KidCode</span>
+        <span class="brand-badge">Ages 5–7</span>
       </a>
-      <nav aria-label="Main Navigation">
+
+      <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false">Menu</button>
+
+      <nav id="main-nav" aria-label="Main Navigation">
         <ul>
           <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="learn.html">Lessons</a></li>
-          <li><a href="games.html">Games</a></li>
-          <li><a href="parent-zone.html">Parents</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Lessons</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Join Us</a></li>
         </ul>
       </nav>
@@ -28,15 +33,20 @@
 
   <main id="main-content">
     <section class="hero-card">
-      <h1>Learning to Code Through Visual Play ✨</h1>
-      <p>Interactive block coding, logic puzzles, and sequence games designed specifically for early learners.</p>
-      <a href="learn.html" class="btn-primary">Start Coding Lessons 🚀</a>
+      <div class="hero-media">
+        <img src="images/hero.svg" alt="Children learning with a laptop" />
+      </div>
+      <div class="hero-copy">
+        <h1>Learning to Code Through Visual Play ✨</h1>
+        <p>Interactive block coding, logic puzzles, and sequence games designed specifically for early learners.</p>
+        <a href="services.html" class="btn-primary">Start Coding Lessons 🚀</a>
+      </div>
     </section>
 
-    <div class="divider"></div>
+    <div class="divider" role="separator" aria-hidden="true"></div>
 
     <section>
-      <h2 class="section-title">Designed Like Code.org & CodeMonkey</h2>
+      <h2 class="section-title">Designed Like Code.org &amp; CodeMonkey</h2>
       <div class="card-grid">
         <article class="card">
           <div class="card-icon">🧩</div>
@@ -55,12 +65,18 @@
           <h3>Computational Thinking</h3>
           <p>Build early problem-solving skills, pattern recognition, and loop logic foundational for STEM.</p>
         </article>
+
+        <article class="card">
+          <div class="card-icon">🤝</div>
+          <h3>Parent &amp; Teacher Tools</h3>
+          <p>Progress reports and activity suggestions make it easy to support your child's learning.</p>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 KidCode Platform. Designed for early STEM learning. | <a href="parent-zone.html">Educator Resources</a></p>
+    <p>&copy; 2026 KidCode Platform. Designed for early STEM learning. | <a href="about.html">Educator Resources</a></p>
   </footer>
 
   <script src="js/main.js"></script>

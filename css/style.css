@@ -1,0 +1,45 @@
+/* Basic responsive styles for KidCode sample site */
+:root{
+  --brand:#2463eb;
+  --accent:#ffb703;
+  --muted:#6b7280;
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --radius:10px;
+  --max-width:1100px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#0f172a}
+.header-container{
+  max-width:var(--max-width);margin:0 auto;padding:18px;display:flex;align-items:center;gap:18px;justify-content:space-between
+}
+.brand-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-weight:600}
+.brand-badge{background:var(--accent);color:#fff;padding:4px 8px;border-radius:999px;font-size:0.8rem}
+.nav-toggle{display:none}
+nav ul{list-style:none;padding:0;margin:0;display:flex;gap:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a.active{color:var(--brand);font-weight:700}
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;left:8px;top:8px;width:auto;height:auto;padding:8px;background:#fff;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.hero-card{max-width:var(--max-width);margin:28px auto;padding:20px;background:linear-gradient(180deg, #fff, #fbfdff);border-radius:var(--radius);display:flex;gap:18px;align-items:center}
+.hero-media img{width:360px;height:auto;border-radius:8px}
+.hero-copy{flex:1}
+.btn-primary{display:inline-block;background:var(--brand);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#e6e9ef,transparent);max-width:var(--max-width);margin:28px auto;border-radius:1px}
+.section-title{max-width:var(--max-width);margin:12px auto 8px;padding:0 18px}
+.card-grid{max-width:var(--max-width);margin:0 auto;padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 1px 4px rgba(16,24,40,.06)}
+.card-icon{font-size:28px}
+.page{max-width:var(--max-width);margin:18px auto;padding:18px;background:var(--card);border-radius:8px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.gallery-grid img{width:100%;height:200px;object-fit:cover;border-radius:8px}
+.contact-form{display:grid;gap:10px;max-width:600px}
+input,textarea{padding:10px;border-radius:6px;border:1px solid #d1d5db}
+footer{max-width:var(--max-width);margin:30px auto;padding:18px;text-align:center;color:var(--muted)}
+@media (max-width:720px){
+  .hero-card{flex-direction:column;text-align:center}
+  .hero-media img{width:100%;max-width:420px}
+  nav ul{display:none}
+  .nav-toggle{display:inline-block}
+}
