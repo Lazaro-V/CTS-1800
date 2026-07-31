@@ -14,7 +14,7 @@
       <nav aria-label="Main Navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Lessons</a></li>
+          <li><a href="lessons.html">Lessons</a></li>
           <li><a href="games.html">Games</a></li>
           <li><a href="parent-zone.html">Parents</a></li>
           <li><a href="join-us.html" class="active" aria-current="page">Join Us</a></li>
@@ -56,6 +56,11 @@
         <label for="message">Message (optional)</label>
         <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your goals or schedule"></textarea>
 
+        <label style="display:flex;align-items:flex-start;gap:0.5rem;margin-top:1rem;">
+          <input type="checkbox" name="consent" required style="width:auto;margin-top:0.25rem;">
+          <span>I consent to KidCode storing my contact information for follow-up about lessons and tutoring.</span>
+        </label>
+
         <button type="submit" class="btn-primary">Send & Sign Up</button>
       </form>
 
@@ -64,7 +69,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 KidCode Platform.</p>
+    <p>&copy; 2026 KidCode Platform. <a href="privacy.html">Privacy</a></p>
   </footer>
   <script src="js/main.js"></script>
 </body>
