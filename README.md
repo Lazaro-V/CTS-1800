@@ -5,13 +5,17 @@ This repository contains a small demo site for KidCode — a sample children's c
 Included pages (main branch):
 
 - index.html — Home
-- services.html — Lessons & Tutoring (with FAQ)
-- about.html — About & Contact (merged contact form)
+- lessons.html — Lessons & Tutoring (with FAQ)
+- join-us.html — Join Us / About & Contact (merged contact form)
 - games.html — Games
 - parent-zone.html — Parents & Teachers
 - booking.html — Book a Tutor (prototype calendar booking UI)
 - admin-bookings.html — Admin view (reads demo bookings from browser localStorage)
-- learn.html — Legacy Lessons / Interactive playground
+- gallery.html — Gallery
+- privacy.html — Privacy Policy
+- services.html — Legacy redirect → lessons.html
+- about.html — Legacy redirect → join-us.html
+- contact.html — Legacy redirect → join-us.html
 - css/style.css
 - js/main.js — global helpers and mock form handler (saves demo submissions to localStorage)
 - js/calendar.js — booking calendar prototype (saves demo bookings to localStorage)
