@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lessons & Tutoring | KidCode</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -39,38 +39,6 @@
           <li>Works on tablets, laptops, or a family computer.</li>
         </ul>
         <p style="margin-top:0.5rem;"><a href="about.html" class="btn-primary">Try a Lesson</a></p>
-      </div>
-
-      <!-- Interactive robot lesson playground -->
-      <div class="card">
-        <h3>Robot Playground — Try a visual program</h3>
-        <p>Click the code blocks to build a short program for Robo. Press Run to see the robot perform your commands. This is how we teach sequencing, loops, and debugging in a gentle, visual way.</p>
-
-        <div class="interactive-container" id="robot-lesson">
-          <div class="toolbar" aria-label="Robot code palette" id="robot-palette">
-            <button class="block-btn" data-action="left">LEFT</button>
-            <button class="block-btn" data-action="right">RIGHT</button>
-            <button class="block-btn" data-action="up">UP</button>
-            <button class="block-btn" data-action="down">DOWN</button>
-            <button class="block-btn" data-action="spin">SPIN</button>
-            <button class="block-btn" data-action="beep">BEEP</button>
-          </div>
-
-          <div class="workspace-area" id="robot-workspace" aria-live="polite" aria-label="Program workspace"></div>
-
-          <div style="display:flex;gap:1rem;align-items:center;margin-top:12px;">
-            <div style="flex:1">
-              <div id="robot-stage" style="background:#fff;border:3px dashed var(--border-color);border-radius:12px;padding:12px;min-height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-                <div id="robot" style="font-size:48px;transform:translateX(0);transition:transform 0.3s;">🤖</div>
-              </div>
-            </div>
-            <div style="width:260px;">
-              <div id="robot-controls"></div>
-              <div id="robot-message" style="margin-top:10px;font-weight:700;color:var(--dark-slate)"></div>
-            </div>
-          </div>
-
-        </div>
       </div>
 
       <h2>Live Online Tutor — first year free</h2>
@@ -147,7 +115,43 @@
 
       </div>
 
+      <!-- Robot Playground moved to the bottom of the page for easier discovery after lessons and FAQs -->
+
     </section>
+
+    <!-- Robot Playground — placed at the bottom of the Lessons page -->
+    <section class="card" id="robot-playground-bottom" style="margin-top:1.5rem;">
+      <h3>Robot Playground — Try a visual program</h3>
+      <p>Click the code blocks to build a short program for Robo. Press Run to see the robot perform your commands. This is how we teach sequencing, loops, and debugging in a gentle, visual way.</p>
+
+      <div class="interactive-container" id="robot-lesson">
+        <div class="toolbar" aria-label="Robot code palette" id="robot-palette">
+          <button class="block-btn" data-action="left">LEFT</button>
+          <button class="block-btn" data-action="right">RIGHT</button>
+          <button class="block-btn" data-action="up">UP</button>
+          <button class="block-btn" data-action="down">DOWN</button>
+          <button class="block-btn" data-action="spin">SPIN</button>
+          <button class="block-btn" data-action="beep">BEEP</button>
+        </div>
+
+        <div class="workspace-area" id="robot-workspace" aria-live="polite" aria-label="Program workspace"></div>
+
+        <div style="display:flex;gap:1rem;align-items:center;margin-top:12px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:220px;">
+            <div id="robot-stage" style="background:#fff;border:3px dashed var(--border-color);border-radius:12px;padding:12px;min-height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+              <div id="robot" style="font-size:48px;transform:translateX(0);transition:transform 0.3s;">🤖</div>
+            </div>
+          </div>
+          <div style="width:260px;min-width:180px;">
+            <div id="robot-controls"></div>
+            <div id="robot-message" style="margin-top:10px;font-weight:700;color:var(--dark-slate)"></div>
+            <div id="robot-live" class="sr-only" aria-live="polite"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
